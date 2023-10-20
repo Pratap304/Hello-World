@@ -1,0 +1,11 @@
+# Use a base image with the required environment (e.g., Java)
+FROM openjdk:17
+
+# Set the working directory in the container
+WORKDIR /package
+
+# Copy the generated artifacts into the container
+COPY package/*.jar /package//
+
+# Define the command to execute your application
+CMD ["java", "-jar", "gs-maven-0.1.0.jar"]
